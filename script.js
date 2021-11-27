@@ -4,7 +4,7 @@ var slides = [];
 $(document).ready(function onLoad() {
     var src = "/pics/slideshow/";
     var i = 0;
-    for(i; i<12; i++) { //should really be done with api
+    for(i; i<12; i++) { //api?
         slides.push(src+i+".jpg");
     }
     $(".numbertext").text(1+"/"+slides.length);
@@ -23,4 +23,26 @@ function showSlides(i) {
     }
     $("#img").attr("src", slides[slideIndex]);
     $(".numbertext").text(slideIndex+1+"/"+slides.length);
+}
+
+function showLanguages() {
+    if("none"==$("#java").css("display")) {
+        $("#languages").text("Languages \u25B3");
+        $("#java").css("display", "block");
+        $("#java").addClass("widen");
+        console.log("oi");
+    } else {
+        $("#languages").text("Languages \u25BD");
+        $("#java").css("display", "none");
+        $("#java").removeClass("widen");
+        console.log("ey");
+    }
+}
+
+function showIDEs() {
+    $("#ides").text("IDEs \u25B3");
+}
+
+function showOther() {
+    $("#other").text("Other \u25B3");
 }

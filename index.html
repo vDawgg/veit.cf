@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
-<!----TODO: CV hinzufügen; Kontaktmöglichkeit hinzufügen (Wie auf anderer Website mit Feld und nicht mit Email)-->
 <html>
 <head>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script charset="UTF-8" src="script.js"></script>
     <link rel="stylesheet" href="style.css"></script>
     <link rel="icon" href="/pics/icons/v.PNG">
 </head>
@@ -31,9 +30,10 @@
     </div>
     <div class="text" id="technical">
         <div class="center"><heading>Technical Skills</heading></div>
-        <p>Languages</p>
-        <p>IDEs</p>
-        <p>Plattforms</p>
+        <p class="tech" onclick="showLanguages()" id="languages">Languages &#9661</p>
+        <div class="progress"  id="java" style="display: none;"></div>
+        <p class="tech" onclick="showIDEs()" id="ides">IDEs &#9661</p>
+        <p class="tech" onclick="showOther()" id="other">Other &#9661</p> <!---Are plattforms really necessary???-->
     </div>
     <div class="slidecontainer" id="photography">
         <div class="text">
@@ -47,6 +47,9 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+    </div>
+    <div style="padding-top: 300px; padding-bottom: 50px">
+        <p><a href="mailto:veit.laule@gmail.com">Contact</a></p>
     </div>
 </body>
 </html>
