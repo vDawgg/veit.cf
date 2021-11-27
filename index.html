@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!----TODO: CV hinzufügen; Kontaktmöglichkeit hinzufügen (Wie auf anderer Website mit Feld und nicht mit Email)-->
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"></script>
+    <link rel="icon" href="/pics/icons/v.PNG">
+</head>
+<body>
+    <div style="padding: 50px;">
+        <div class="center"><heading style="display: inline-block; font-size: x-large;">Veit Laule</heading></div>
+        <div style="top: 50%; position: relative; margin-top: -30px;">
+            <a href="https://github.com/vDawgg" style="display: inline-block;">
+                <img src="/pics/icons/GitHub-Mark-32px.png">
+            </a>
+        </div>
+        <div style="display: inline-block; left: 50%; transform: translate(-50%); position: absolute;">
+            <a class="pagelink" href="#about">About</a>
+            <a class="pagelink" href="#technical">Technical Skills</a>
+            <a class="pagelink" href="#photography">Photography</a>
+            <a class="pagelink" href="/cv/cv.pdf">CV</a>
+        </div>
+    </div>
+    <div class="text" id="about">
+        <div class="center" style="padding-bottom: 20px;"><heading>About</heading></div>
+        <p>My Name is Veit and I am a business/CS student at TU-Berlin. I have a passion for programming, all things technology related and, of course, photography.</p>
+        <p>This website should represent myself and hopefully my project work as best as possible. I like to think of it as a digital bussines card.</p>
+        <p>As of now this business card might be a little bleak, but I am planning to add everything I am currently working on. So mark it as work in progress.</p>
+    </div>
+    <div class="text" id="technical">
+        <div class="center"><heading>Technical Skills</heading></div>
+        <p>Languages</p>
+        <p>IDEs</p>
+        <p>Plattforms</p>
+    </div>
+    <div class="slidecontainer" id="photography">
+        <div class="text">
+            <div class="center"><heading>Photography</heading></div>
+        </div>
+        <div class="container">
+            <div class="numbertext"></div>
+            <div class="Photo">
+                <img id="img" src="/pics/slideshow/0.jpg" style="width: auto; height: 100%;">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+</body>
+</html>
