@@ -31,9 +31,48 @@
     <div class="text" id="technical">
         <div class="center"><heading>Technical Skills</heading></div>
         <p class="tech" onclick="showLanguages()" id="languages">Languages &#9661</p>
-        <div class="progress"  id="java" style="display: none;"></div>
+        <div class="progressWrapperLanguages">
+            <p style="font-family: monospace;">Java</p>
+            <div class="progress"  id="java"></div>
+        </div>
+        <div class="progressWrapperLanguages">
+            <p style="font-family: monospace;">JavaScript</p>
+            <div class="progress" id="js"></div>
+        </div>
+        <div class="progressWrapperLanguages">
+            <p style="font-family: monospace;">Python</p>
+            <div class="progress" id="python"></div>
+        </div>
         <p class="tech" onclick="showIDEs()" id="ides">IDEs &#9661</p>
-        <p class="tech" onclick="showOther()" id="other">Other &#9661</p> <!---Are plattforms really necessary???-->
+        <div class="progressWrapperIdes">
+            <p style="font-family: monospace;">IntelliJ</p>
+            <div class="progress" id="intellij"></div>
+        </div>
+        <div class="progressWrapperIdes">
+            <p style="font-family: monospace;">VSCode</p>
+            <div class="progress" id="vscode"></div>
+        </div>
+        <div class="progressWrapperIdes">
+            <p style="font-family: monospace;">Eclipse</p>
+            <div class="progress" id="eclipse"></div>
+        </div>
+        <p class="tech" onclick="showOther()" id="other">Other &#9661</p>
+        <div class="progressWrapperOther">
+            <p style="font-family: monospace;">Linux</p>
+            <div class="progress" id="linux"></div>
+        </div>
+        <div class="progressWrapperOther">
+            <p style="font-family: monospace;">Spring</p>
+            <div class="progress" id="spring"></div>
+        </div>
+        <div class="progressWrapperOther">
+            <p style="font-family: monospace;">Docker</p>
+            <div class="progress" id="docker"></div>
+        </div>
+        <div class="progressWrapperOther">
+            <p style="font-family: monospace;">React-Native</p>
+            <div class="progress" id="react"></div>    
+        </div>
     </div>
     <div class="slidecontainer" id="photography">
         <div class="text">
@@ -49,7 +88,8 @@
         </div>
     </div>
     <div style="padding-top: 300px; padding-bottom: 50px">
-        <p><a href="mailto:veit.laule@gmail.com">Contact</a></p>
+        <p>Contact</p>
+        <a href="mailto:veit.laule@gmail.com" style="justify-content: center; display: flex; font-size: larger;">&#128231</a>
     </div>
 </body>
 </html>
