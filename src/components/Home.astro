@@ -1,1 +1,21 @@
+---
+import TextLayout from "../layouts/TextLayout.astro";
+import SideBar from "./SideBar.astro";
+---
 
+<html>
+    <!--- The following head element could be its own component for better reusability -->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>veit.cf</title>
+    </head>
+    <body>
+        <div class="flex items-center">
+            <SideBar />
+            <TextLayout>
+                <slot />
+            </TextLayout> 
+        </div>
+    </body>
+</html>

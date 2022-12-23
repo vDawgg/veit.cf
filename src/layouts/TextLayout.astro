@@ -1,9 +1,4 @@
 ---
-export interface Props {
-	title: string;
-}
-
-const { title } = Astro.props.frontmatter || Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -13,12 +8,10 @@ const { title } = Astro.props.frontmatter || Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 	</head>
 	<body>
-		<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+		<div class="p-6 w-2/3 mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
 			<div>
-				<div class="text-xl font-medium text-black"> {title} </div>
 				<slot/>
 			</div>
 		  </div>
