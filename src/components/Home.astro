@@ -1,19 +1,23 @@
 ---
+import { AstroComponent } from "astro/dist/runtime/server/render/astro";
 import TextLayout from "../layouts/TextLayout.astro";
 import SideBar from "./SideBar.astro";
+const {frontmatter} = Astro.props;
 ---
 
 <html>
     <!--- The following head element could be its own component for better reusability -->
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width" /> <!---- Is this even necessary? -->
         <title>veit.cf</title>
     </head>
     <body>
-        <div class="flex items-center">
+        <div class="flex">
             <SideBar />
             <TextLayout>
+                <h1 class="text-5xl">{frontmatter.title}</h1>
+                <br>
                 <slot />
             </TextLayout> 
         </div>

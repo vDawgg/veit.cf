@@ -1,19 +1,10 @@
 ---
 ---
+<div class="p-4 min-h-screen w-full flex">
+	<div class="p-4 bg-black text-white rounded-xl drop-shadow-xl w-full flex">
+		<div>
+			<slot/>
+		</div>
+	</div>
+</div>
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-		<div class="p-6 w-2/3 mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
-			<div>
-				<slot/>
-			</div>
-		  </div>
-	</body>
-</html>

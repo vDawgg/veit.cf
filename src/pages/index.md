@@ -1,5 +1,6 @@
 ---
 layout: "../components/Home.astro"
-title: "Veit"
+title: "Home"
 ---
+
 Nice to meet you!
