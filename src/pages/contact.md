@@ -1,5 +1,5 @@
 ---
-layout: "../components/Home.astro"
+layout: "../layouts/Home.astro"
 title: "Contact"
 ---
 

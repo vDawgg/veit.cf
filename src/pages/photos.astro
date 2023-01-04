@@ -1,0 +1,10 @@
+---
+import PhotoLayout from "../layouts/PhotoLayout.astro";
+import Gallery from "../components/Gallery.svelte";
+
+const title =  "photos";
+---
+
+<PhotoLayout>
+    <Gallery client:load/>    
+</PhotoLayout>

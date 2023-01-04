@@ -1,0 +1,21 @@
+---
+import Text from "../components/Text.astro"
+import SideBar from "../components/SideBar.astro";
+import Head from "../components/Head.astro";
+const {title} = Astro.props.frontmatter || Astro.props;
+
+//TODO: This should probably be a layout
+---
+
+<html>
+    <!--- The following head element could be its own component for better reusability -->
+    <Head />
+    <body>
+        <div class="flex">
+            <SideBar />
+            <Text>
+                <slot />
+            </Text> 
+        </div>
+    </body>
+</html>

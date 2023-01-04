@@ -1,0 +1,23 @@
+---
+import Text from "../components/Text.astro"
+import SideBar from "../components/SideBar.astro";
+import Head from "../components/Head.astro";
+const {title} = Astro.props.frontmatter || Astro.props;
+
+//TODO: Adapt this to be compatible with photos, so that PhotoLayout can be made redundant
+---
+
+<html>
+    <!--- The following head element could be its own component for better reusability -->
+    <Head />
+    <body>
+        <div class="flex">
+            <SideBar />
+            <Text>
+                <h1 class="text-5xl">{title}</h1>
+                <br>
+                <slot />
+            </Text> 
+        </div>
+    </body>
+</html>
