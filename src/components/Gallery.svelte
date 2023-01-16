@@ -4,7 +4,7 @@
     export let photos = [];
 
     for (const p in glob) {
-        photos.push(p.toString());
+        photos.push(p.toString().replace('/public', ''));
     }
 </script>
 
