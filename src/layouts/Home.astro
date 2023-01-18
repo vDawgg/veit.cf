@@ -2,13 +2,13 @@
 import Text from "../components/Text.astro"
 import SideBar from "../components/SideBar.astro";
 import Head from "../components/Head.astro";
+import GameOfLife from "../components/GameOfLife.astro";
 const {title} = Astro.props.frontmatter || Astro.props;
 
 //TODO: Adapt this to be compatible with photos, so that PhotoLayout can be made redundant
 ---
 
 <html>
-    <!--- The following head element could be its own component for better reusability -->
     <Head />
     <body>
         <div class="flex">
@@ -17,6 +17,7 @@ const {title} = Astro.props.frontmatter || Astro.props;
                 <h1 class="text-5xl">{title}</h1>
                 <br>
                 <slot />
+                <GameOfLife />
             </Text> 
         </div>
     </body>

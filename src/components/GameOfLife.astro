@@ -1,0 +1,119 @@
+---
+//TODO: Make the grid-size dynamic by passing its size via component-props
+---
+
+<script>
+    //TODO: Find out what effect the padding has here!
+
+    var p = 0;
+
+    const create2dArray = (rows: number, columns: number) => [...Array(rows).keys()].map(i => Array(columns)) ;
+
+    //Array representation of grid contains a bool for whether the cell is dead
+    let gridArr: Boolean[][] = create2dArray(100, 100);
+
+    let grid = document.getElementById("grid");
+    let ctx = grid.getContext("2d");
+
+    let seed = new Map();
+
+    //TODO: Make this its own function with the Math.random size as a parameter
+    //Initiate the seed values
+    for (let n = 0; n < 5000+Math.floor(Math.random() * 100); n++) {
+        let x: number = Math.floor(Math.random() * 100);
+        let y: number = Math.floor(Math.random() * 100);
+
+        seed.set(x+","+y, "");
+    }
+
+    console.log(seed);
+
+    for (let i = 0; i < gridArr.length; i++) {
+        for (let j = 0; j < gridArr[0].length; j++) {
+
+            if (seed.get(i+","+j) != undefined) {
+                gridArr[i][j] = true
+            } else {
+                gridArr[i][j] = false;
+            }
+        }
+    }
+
+    function inBoundsAndLive(x: number, y: number) {
+        if (x >= 0 && x < gridArr.length && y < gridArr[0].length && y >= 0) {
+            if (gridArr[x][y] == true) {
+                return true;
+            }
+        } 
+
+        return false;
+    }
+
+    function runGame() {
+        setInterval(() => {
+           //Display current state
+            for (let i = 0; i < gridArr.length; i++) {
+                for (let j = 0; j < gridArr.length; j++) {
+                    if (gridArr[i][j] == true) {
+                        reviveCell(ctx, i*10, j*10);
+                    } 
+                    //TODO: Change this to something more efficient
+                    else {
+                        killCell(ctx, i*10, j*10);
+                    }
+                }
+            }
+
+            //Compute new state
+            for (let i = 0; i < gridArr.length; i++) {
+                for (let j = 0; j < gridArr.length; j++) {
+                    let neighbors = 0;
+                    
+                    //Check up
+                    neighbors += inBoundsAndLive(i+1, j) ? 1 : 0;
+                    //Check down
+                    neighbors += inBoundsAndLive(i-1, j) ? 1 : 0;
+                    //Check left
+                    neighbors += inBoundsAndLive(i, j-1) ? 1 : 0;
+                    //Check right
+                    neighbors += inBoundsAndLive(i, j+1) ? 1 : 0;
+                    //Check top-left
+                    neighbors += inBoundsAndLive(i+1, j-1) ? 1 : 0;
+                    //Check top-right
+                    neighbors += inBoundsAndLive(i+1, j+1) ? 1 : 0;
+                    //Check bottom-left
+                    neighbors += inBoundsAndLive(i-1, j-1) ? 1 : 0;
+                    //Check bottom-right
+                    neighbors += inBoundsAndLive(i-1, j+1) ? 1 : 0;
+
+                    let cell = gridArr[i][j];
+                    //Live cell with less than two neighbors -> Cell dies
+                    if (cell && neighbors < 2) gridArr[i][j] = false;
+                    //Live cell with more than three neighbors -> Cell dies
+                    else if (cell && neighbors > 3) gridArr[i][j] = false;
+                    //Dead cell with more than three neighbors -> Cell lives
+                    else if (!cell && neighbors > 3) gridArr[i][j] = true;
+
+                    if (cell != gridArr[i][j]) {
+                        console.log("changed");
+                    }
+                }
+            }     
+        }, 600);      
+    }
+
+    function reviveCell(ctx: any, x: number, y: number) {
+        ctx.fillStyle = "white";
+        ctx.fillRect(x, y, 40, 40); //The third and fourth arguments specify the size of the rectangle
+    }
+
+    function killCell(ctx: any, x: number, y: number) {
+        ctx.fillStyle = "black";
+        ctx.fillRect(x, y, 40, 40);
+    }
+
+    window.onload = runGame;
+</script>
+
+<!--- Find out if the size of the canvas can be dynamic! -->
+<canvas id="grid" width="420px" height="420px"/>
